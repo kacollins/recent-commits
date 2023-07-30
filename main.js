@@ -24,14 +24,16 @@ class Person {
   }
 }
 async function main() {
-  const people = await getPeopleFromFile();
+  const people = getPeopleFromFile();
 
   await getLastCommitDatesForPeople(people);
+
+  console.log("people", people);
 
   displayResults(people);
 }
 
-async function getPeopleFromFile() {
+function getPeopleFromFile() {
   const people = data.people.map(person => new Person(
     person.username.toString(),
     person.firstname.toString(),
@@ -54,7 +56,8 @@ async function getLastCommitDate(username) {
   let lastCommitDate = null;
 
   if (allRepositories.length > 0) {
-    lastCommitDate = new Date(allRepositories.reduce((max, r) => (r.pushed_at > max ? r.Pushed_At : max), allRepositories[0].pushed_at));
+    const pushedAtDates = allRepositories.map(repo => new Date(repo.pushed_at));
+    lastCommitDate = new Date(Math.max(...pushedAtDates));
   }
 
   return lastCommitDate;
@@ -157,7 +160,8 @@ function createListItem(person, listItemClass, place) {
   listItem.appendChild(link);
 
   if (Number.isInteger(person.DaysAgo)) {
-    const text = document.createTextNode(` - ${person.DaysAgo} days ago`);
+    const timeDescription = person.DaysAgo == 0 ? " - today" : ` - ${person.DaysAgo} day${person.DaysAgo == 1 ? "" : "s"} ago`;
+    const text = document.createTextNode(timeDescription);
     listItem.appendChild(text);
   }
 

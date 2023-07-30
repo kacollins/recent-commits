@@ -100,7 +100,7 @@ data = {
 			"username": "kacollins",
 			"firstname": "Kimberly",
 			"lastname": "Collins",
-			"active": false
+			"active": true
 		}, 
 		{ 
 			"username": "karenrcampbell",
