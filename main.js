@@ -28,8 +28,6 @@ async function main() {
 
   await getLastCommitDatesForPeople(people);
 
-  console.log("people", people);
-
   displayResults(people);
 }
 
@@ -101,7 +99,7 @@ async function getPageOfRepositories(username, pageNumber, rowsPerPage = 30) {
 
 function displayResults(people) {
   var peopleToInclude = people
-    .filter((u) => u.Active && Number.isInteger(u.DaysAgo))
+    .filter((u) => u.Active)
     .sort((a, b) => new Date(b.LastCommitDateUTC) - new Date(a.LastCommitDateUTC));
 
   var recentPeople = peopleToInclude.slice(0, 10);  
@@ -118,14 +116,14 @@ function displayGroup(groupName, peopleToInclude) {
   groupDiv.innerHTML = '';
 
   const header = document.createElement('h2');
-  header.textContent = isRecent ? '10 Most Recent' : 'Everybody Else';
+  header.textContent = isRecent ? '10 Most Recent Committers' : 'Everybody Else';
   groupDiv.appendChild(header);
 
   const listGroup = document.createElement('ul');
   listGroup.classList.add('list-group');
 
   var i = 1;
-  const listItemClass = isRecent ? 'list-group-item-success' : 'list-group-item-secondary';
+  const listItemClass = isRecent ? 'list-group-item-success' : 'list-group-item-info';
 
   peopleToInclude
     .forEach((person) => {
@@ -145,8 +143,8 @@ function createListItem(person, listItemClass, place) {
   if (place) {
     const badge = document.createElement('span');
     badge.classList.add('badge');
-    badge.classList.add('badge-pill');
-    badge.classList.add('badge-light');
+    badge.classList.add('rounded-pill');
+    badge.classList.add('bg-success');
     badge.textContent = place;
     listItem.appendChild(badge);
 
@@ -160,7 +158,7 @@ function createListItem(person, listItemClass, place) {
   listItem.appendChild(link);
 
   if (Number.isInteger(person.DaysAgo)) {
-    const timeDescription = person.DaysAgo == 0 ? " - today" : ` - ${person.DaysAgo} day${person.DaysAgo == 1 ? "" : "s"} ago`;
+    const timeDescription = person.DaysAgo == 0 ? " - past 24 hours" : ` - ${person.DaysAgo} day${person.DaysAgo == 1 ? "" : "s"} ago`;
     const text = document.createTextNode(timeDescription);
     listItem.appendChild(text);
   }
