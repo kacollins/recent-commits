@@ -1,4 +1,4 @@
-data = {
+{
     "people": [
         {
             "GitHubUserName": "alkrauss48",
@@ -211,4 +211,4 @@ data = {
             "LastCommitDate": null
         }
     ]
-};
+}
