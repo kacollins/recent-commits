@@ -11,18 +11,15 @@ class Person {
     return `${this.FirstName} ${this.LastName}`;
   }
 
-  get LastCommitDateCDT() {
-    return this.LastCommitDateUTC ? new Date(this.LastCommitDateUTC - 5 * 60 * 60 * 1000) : null;
-  }
-
   get DaysAgo() {
-    return this.LastCommitDateCDT ? Math.floor((new Date() - this.LastCommitDateCDT) / (24 * 60 * 60 * 1000)) : null;
+    return this.LastCommitDateUTC ? Math.floor((new Date() - this.LastCommitDateUTC) / (24 * 60 * 60 * 1000)) : null;
   }
 
   get URL() {
     return `https://github.com/${this.GitHubUserName}`;
   }
 }
+
 async function main() {
   const people = getPeopleFromFile();
 
@@ -139,6 +136,10 @@ function createListItem(person, listItemClass, place) {
   listItem.classList.add('list-group-item');
   listItem.classList.add('list-group-item-action');
   listItem.classList.add(listItemClass);
+
+  listItem.setAttribute("data-toggle", "tooltip");
+  listItem.setAttribute("data-placement", "top");
+  listItem.setAttribute("title", person.LastCommitDateUTC);
 
   if (place) {
     const badge = document.createElement('span');
