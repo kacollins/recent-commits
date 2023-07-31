@@ -2,7 +2,7 @@ name: Run and Save JavaScript Results
 
 on:
   schedule:
-    - cron: '15 * * * *'
+    - cron: '30 * * * *'
 
 jobs:
   run_and_save_results:
@@ -18,8 +18,15 @@ jobs:
           node-version: '14'
 
       - name: Run JavaScript script
-        run: node script.js
+        run: node script.js > data.json
+        working-directory: ''
 
-      - name: Save results to JSON file
-
-        run: echo "${{ steps.run_javascript_script.outputs.result }}" > data.json
+      - name: Commit and push the updated data.json
+        run: |
+          git config user.name "kacollins"
+          git config user.email "kimberlyacollins@gmail.com"
+          git add data.json
+          git commit -m "Update data.json"
+          git push origin json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
