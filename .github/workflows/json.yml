@@ -2,7 +2,7 @@ name: Run and Save JavaScript Results
 
 on:
   schedule:
-    - cron: '30 * * * *'
+    - cron: '0 * * * *'
 
 jobs:
   run_and_save_results:
@@ -11,13 +11,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          ref: json
 
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
 
-      - name: Run JavaScript script
+      - name: Run script and save results
         run: node script.js > data.json
         working-directory: ''
 
@@ -26,7 +28,7 @@ jobs:
           git config user.name "kacollins"
           git config user.email "kimberlyacollins@gmail.com"
           git add data.json
-          git commit -m "Update data.json"
+          git commit -m "Update data.json from script.js"
           git push origin json
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
