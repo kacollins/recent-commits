@@ -1,0 +1,25 @@
+name: Run and Save JavaScript Results
+
+on:
+  schedule:
+    - cron: '15 * * * *'
+
+jobs:
+  run_and_save_results:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Run JavaScript script
+        run: node script.js
+
+      - name: Save results to JSON file
+
+        run: echo "${{ steps.run_javascript_script.outputs.result }}" > data.json
