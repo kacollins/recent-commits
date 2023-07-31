@@ -99,17 +99,22 @@ async function updateData(jsonData) {
 }
 
 function saveData(jsonData) {
-  const jsonString = JSON.stringify(jsonData, null, 4);
-
-  fs.writeFileSync('data.json', jsonString, 'utf-8', (err) => {
-    if (err) throw err;
-  });
+  try {
+    const jsonString = JSON.stringify(jsonData, null, 4);
+    fs.writeFileSync('data.json', jsonString, 'utf8');
+    console.log('Data saved to data.json successfully.');
+    return jsonString;
+  } catch (error) {
+    console.error('Error saving data to data.json:', error);
+    return null;
+  }
 }
-
-main();
 
 async function main() {
   const jsonData = getData();
   jsonData.people = await updateData(jsonData);
   saveData(jsonData);
+  console.log(jsonData);
 }
+
+main();
