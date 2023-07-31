@@ -1,0 +1,214 @@
+{
+    "people": [
+        {
+            "GitHubUserName": "alkrauss48",
+            "FirstName": "Aaron",
+            "LastName": "Krauss",
+            "Active": true,
+            "LastCommitDate": "2023-07-29T04:34:25.000Z"
+        },
+        {
+            "GitHubUserName": "aharonpatchen",
+            "FirstName": "Aharon",
+            "LastName": "Patchen",
+            "Active": true,
+            "LastCommitDate": "2023-07-28T00:54:49.000Z"
+        },
+        {
+            "GitHubUserName": "aemolinas",
+            "FirstName": "Amar",
+            "LastName": "Molinas",
+            "Active": true,
+            "LastCommitDate": "2023-07-25T02:46:43.000Z"
+        },
+        {
+            "GitHubUserName": "Alsidneio",
+            "FirstName": "Alsidneio",
+            "LastName": "Bell",
+            "Active": false,
+            "LastCommitDate": null
+        },
+        {
+            "GitHubUserName": "Annie-Almond",
+            "FirstName": "Annie",
+            "LastName": "Almond",
+            "Active": true,
+            "LastCommitDate": "2023-07-31T03:34:30.000Z"
+        },
+        {
+            "GitHubUserName": "brandonmcrist",
+            "FirstName": "Brandon",
+            "LastName": "Crist",
+            "Active": false,
+            "LastCommitDate": null
+        },
+        {
+            "GitHubUserName": "ChelseaHaldane",
+            "FirstName": "Chelsea",
+            "LastName": "Haldane",
+            "Active": false,
+            "LastCommitDate": null
+        },
+        {
+            "GitHubUserName": "CKCarr",
+            "FirstName": "Crystal",
+            "LastName": "Carrillo",
+            "Active": true,
+            "LastCommitDate": "2023-07-31T14:09:56.000Z"
+        },
+        {
+            "GitHubUserName": "drchaney",
+            "FirstName": "David",
+            "LastName": "Chaney",
+            "Active": true,
+            "LastCommitDate": "2023-07-30T14:27:27.000Z"
+        },
+        {
+            "GitHubUserName": "OnlyDuncan",
+            "FirstName": "Duncan",
+            "LastName": "Payne",
+            "Active": true,
+            "LastCommitDate": "2023-07-31T18:11:38.000Z"
+        },
+        {
+            "GitHubUserName": "zenlex",
+            "FirstName": "Erich",
+            "LastName": "Keil",
+            "Active": true,
+            "LastCommitDate": "2023-07-29T22:14:55.000Z"
+        },
+        {
+            "GitHubUserName": "geenajackson",
+            "FirstName": "Geena",
+            "LastName": "Jackson",
+            "Active": false,
+            "LastCommitDate": null
+        },
+        {
+            "GitHubUserName": "osu4life75",
+            "FirstName": "George",
+            "LastName": "Lynch",
+            "Active": true,
+            "LastCommitDate": "2023-07-31T00:12:19.000Z"
+        },
+        {
+            "GitHubUserName": "Rubrasum",
+            "FirstName": "Joseph",
+            "LastName": "Betbeze",
+            "Active": false,
+            "LastCommitDate": null
+        },
+        {
+            "GitHubUserName": "JosiahABrown",
+            "FirstName": "Josiah",
+            "LastName": "Brown",
+            "Active": true,
+            "LastCommitDate": "2023-07-26T20:25:20.000Z"
+        },
+        {
+            "GitHubUserName": "JuanAyala7",
+            "FirstName": "Juan",
+            "LastName": "Ayala",
+            "Active": false,
+            "LastCommitDate": null
+        },
+        {
+            "GitHubUserName": "kacollins",
+            "FirstName": "Kimberly",
+            "LastName": "Collins",
+            "Active": true,
+            "LastCommitDate": "2023-07-31T18:18:17.000Z"
+        },
+        {
+            "GitHubUserName": "karenrcampbell",
+            "FirstName": "Karen",
+            "LastName": "Campbell",
+            "Active": false,
+            "LastCommitDate": null
+        },
+        {
+            "GitHubUserName": "kchilds1",
+            "FirstName": "Kenneth",
+            "LastName": "Childs",
+            "Active": true,
+            "LastCommitDate": "2023-07-30T04:19:13.000Z"
+        },
+        {
+            "GitHubUserName": "Kallory",
+            "FirstName": "Kory",
+            "LastName": "Palmer",
+            "Active": true,
+            "LastCommitDate": "2023-07-25T19:44:53.000Z"
+        },
+        {
+            "GitHubUserName": "lily-oliver",
+            "FirstName": "Lily",
+            "LastName": "Oliver",
+            "Active": false,
+            "LastCommitDate": null
+        },
+        {
+            "GitHubUserName": "m-mackey",
+            "FirstName": "Megan",
+            "LastName": "Mackey",
+            "Active": true,
+            "LastCommitDate": "2023-07-28T07:00:42.000Z"
+        },
+        {
+            "GitHubUserName": "moeabraham",
+            "FirstName": "Mohamed",
+            "LastName": "Soliman",
+            "Active": true,
+            "LastCommitDate": "2023-07-27T20:50:09.000Z"
+        },
+        {
+            "GitHubUserName": "bortami",
+            "FirstName": "Michelle",
+            "LastName": "Tabor",
+            "Active": true,
+            "LastCommitDate": "2023-07-20T16:28:46.000Z"
+        },
+        {
+            "GitHubUserName": "Npcodes1",
+            "FirstName": "Nicole",
+            "LastName": "Payne",
+            "Active": true,
+            "LastCommitDate": "2023-07-26T06:16:05.000Z"
+        },
+        {
+            "GitHubUserName": "jr-philip",
+            "FirstName": "Philip",
+            "LastName": "Mwaura",
+            "Active": false,
+            "LastCommitDate": null
+        },
+        {
+            "GitHubUserName": "RandyBrown12",
+            "FirstName": "Randy",
+            "LastName": "Brown",
+            "Active": true,
+            "LastCommitDate": "2023-07-31T02:56:53.000Z"
+        },
+        {
+            "GitHubUserName": "RossWhiteR",
+            "FirstName": "Rosangel",
+            "LastName": "White",
+            "Active": false,
+            "LastCommitDate": null
+        },
+        {
+            "GitHubUserName": "tabbytoney",
+            "FirstName": "Tabby",
+            "LastName": "Toney Douglass",
+            "Active": true,
+            "LastCommitDate": "2023-07-26T19:57:26.000Z"
+        },
+        {
+            "GitHubUserName": "zacharyjpeter",
+            "FirstName": "Zachary",
+            "LastName": "Peterson",
+            "Active": false,
+            "LastCommitDate": null
+        }
+    ]
+}
