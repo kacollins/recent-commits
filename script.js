@@ -78,9 +78,14 @@ async function getPageOfRepositories(username, pageNumber, rowsPerPage = 30) {
 const fs = require('fs');
 
 function getData() {
-  const data = fs.readFileSync('data.json');
-
-  const jsonData = JSON.parse(data);
+  try {
+    const data = fs.readFileSync('data.json', 'utf8');
+    console.log(data);
+    const jsonData = JSON.parse(data);
+    console.log(jsonData);
+  } catch (error) {
+    console.error('Error reading JSON file:', error);
+  }
 
   return jsonData;
 }

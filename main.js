@@ -21,13 +21,13 @@ class Person {
 }
 
 async function main() {
-  const people = getPeopleFromFile();
-
-  displayResults(people);
+  fetch('https://raw.githubusercontent.com/kacollins/recent-commits/json/data.json')
+  .then((response) => response.json())
+  .then((json) => getPeople(json));
 }
 
-function getPeopleFromFile() {
-  const people = data.people.map(person => new Person(
+function getPeople(json) {
+  const people = json.people.map(person => new Person(
     person.GitHubUserName,
     person.FirstName,
     person.LastName,
@@ -35,7 +35,7 @@ function getPeopleFromFile() {
     person.LastCommitDate
   ));
 
-  return people;
+  displayResults(people);
 }
 
 function displayResults(people) {
