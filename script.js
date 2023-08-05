@@ -77,14 +77,23 @@ async function getPageOfRepositories(username, pageNumber, rowsPerPage = 30) {
 
 const fs = require('fs');
 
-function getData() {
+function readFile() {
   try {
     const data = fs.readFileSync('data.json', 'utf8');
-    console.log(data);
+    console.log('File read successfully.');
+    return data;
+  } catch (error) {
+    console.error('Error reading file:', error);
+  }
+}
+
+function getData(data) {
+  try {
     const jsonData = JSON.parse(data);
+    console.log('JSON parsed successfully.');
     return jsonData;
   } catch (error) {
-    console.error('Error reading JSON file:', error);
+    console.error('Error parsing JSON:', error);
   }
 }
 
@@ -114,14 +123,13 @@ function saveData(jsonData) {
 }
 
 async function main() {
-  const jsonData = getData();
+  const fileData = readFile();
+  const jsonData = getData(fileData);
 
   if (jsonData) {
     jsonData.people = await updateData(jsonData);
     saveData(jsonData);
   }
-
-  console.log(jsonData);
 }
 
 main();
