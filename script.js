@@ -78,11 +78,14 @@ async function getPageOfRepositories(username, pageNumber, rowsPerPage = 30) {
 const fs = require('fs');
 
 function getData() {
-  const data = fs.readFileSync('data.json');
-
-  const jsonData = JSON.parse(data);
-
-  return jsonData;
+  try {
+    const data = fs.readFileSync('data.json', 'utf8');
+    console.log(data);
+    const jsonData = JSON.parse(data);
+    return jsonData;
+  } catch (error) {
+    console.error('Error reading JSON file:', error);
+  }
 }
 
 async function updateData(jsonData) {
@@ -112,8 +115,12 @@ function saveData(jsonData) {
 
 async function main() {
   const jsonData = getData();
-  jsonData.people = await updateData(jsonData);
-  saveData(jsonData);
+
+  if (jsonData) {
+    jsonData.people = await updateData(jsonData);
+    saveData(jsonData);
+  }
+
   console.log(jsonData);
 }
 
