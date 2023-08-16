@@ -122,14 +122,15 @@ function saveData(jsonData) {
   }
 }
 
-async function main() {
-  const fileData = readFile();
-  const jsonData = getData(fileData);
+async function updateAndSaveData(jsonData) {
+  jsonData.people = await updateData(jsonData);
+  saveData(jsonData);
+}
 
-  if (jsonData) {
-    jsonData.people = await updateData(jsonData);
-    saveData(jsonData);
-  }
+async function main() {
+  fetch('https://raw.githubusercontent.com/kacollins/recent-commits/json/data.json')
+  .then((response) => response.json())
+  .then((json) => updateAndSaveData(json));
 }
 
 main();
